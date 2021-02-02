@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.756" />
 
     <EditText
         android:id="@+id/et_userEmail"
@@ -73,5 +73,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.581" />
+
+    <TextView
+        android:id="@+id/tv_ForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FORGOT PASSWORD?"
+        android:textColor="#C4000000"
+        app:layout_constraintBottom_toTopOf="@+id/tv_attempts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_userPassword"
+        app:layout_constraintVertical_bias="0.775" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

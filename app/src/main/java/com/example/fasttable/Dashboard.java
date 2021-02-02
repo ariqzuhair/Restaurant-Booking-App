@@ -47,6 +47,8 @@ public class Dashboard extends AppCompatActivity {
             {
                 Logout();
             }
+            case R.id.profileMenu:
+                startActivity(new Intent (Dashboard.this, ProfileActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

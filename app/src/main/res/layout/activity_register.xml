@@ -17,9 +17,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <Button
         android:id="@+id/btn_regSignUp"
@@ -31,10 +32,9 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749" />
+        app:layout_constraintVertical_bias="0.835" />
 
     <TextView
         android:id="@+id/tv_userLogin"
@@ -44,10 +44,10 @@
         android:textColor="#696969"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.912" />
 
     <EditText
         android:id="@+id/reg_userEmail"
@@ -59,10 +59,9 @@
         android:textColorHint="#696969"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_register"
+        app:layout_constraintVertical_bias="0.325" />
 
     <EditText
         android:id="@+id/reg_userName"
@@ -74,10 +73,9 @@
         android:textColorHint="#696969"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_userEmail"
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/reg_userPassword"
@@ -89,9 +87,34 @@
         android:textColorHint="#696969"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_userName"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toTopOf="@+id/btn_regSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_userPassword"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toTopOf="@+id/reg_userEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register"
+        app:layout_constraintVertical_bias="0.514"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
