@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileAge = (TextView)findViewById(R.id.tv_profileAge);
         profileEmail = (TextView)findViewById(R.id.tv_profileEmail);
         profileUpdate = (Button)findViewById(R.id.btn_profileUpdate);
-        changePassword = findViewById(R.id.btnChangePassword);
+        changePassword = (Button)findViewById(R.id.btn_changePassword);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
