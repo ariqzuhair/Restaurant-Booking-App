@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,7 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UpdateProfile extends AppCompatActivity {
 
-    private EditText newUserName, newUserEmail, newUserAge;
+    private EditText newUserName, newUserAge;
+    private TextView userEmail;
     private Button save;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -30,7 +32,7 @@ public class UpdateProfile extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
 
         newUserName = findViewById(R.id.etNameUpdate);
-        newUserEmail = findViewById(R.id.etEmailUpdate);
+        userEmail = findViewById(R.id.tv_email);
         newUserAge = findViewById(R.id.etAgeUpdate);
         save = findViewById(R.id.btnSave);
 
@@ -47,7 +49,7 @@ public class UpdateProfile extends AppCompatActivity {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 newUserName.setText(userProfile.getUserName());
                 newUserAge.setText(userProfile.getUserAge());
-                newUserEmail.setText(userProfile.getUserEmail());
+                userEmail.setText(userProfile.getUserEmail());
             }
 
             @Override
@@ -61,7 +63,7 @@ public class UpdateProfile extends AppCompatActivity {
             public void onClick(View v) {
                 String name = newUserName.getText().toString();
                 String age = newUserAge.getText().toString();
-                String email = newUserEmail.getText().toString();
+                String email = userEmail.getText().toString();
 
                 UserProfile userProfile = new UserProfile(age, email, name);
 
