@@ -33,7 +33,6 @@ import java.io.IOException;
 
 public class Register extends AppCompatActivity {
 
-    //Variables
     private EditText userName, userPassword, userEmail, userAge;
     private Button regButton;
     private TextView userLogin;
@@ -64,6 +63,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().setTitle("Register");
         setupUIViews();
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -181,7 +181,7 @@ public class Register extends AppCompatActivity {
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(Register.this,"Upload Succesful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Register.this,"Upload Successful", Toast.LENGTH_SHORT).show();
 
             }
         });

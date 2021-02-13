@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
     private EditText Email;
     private EditText Password;
     private Button Login;
-    private Button Register;
+    private TextView Register;
     private TextView Attempts;
     private FirebaseAuth firebaseAuth;
     private int counter = 3;
@@ -34,12 +34,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().setTitle("Login");
 
         Email            = (EditText)findViewById(R.id.et_userEmail);
         Password         = (EditText)findViewById(R.id.et_userPassword);
         Attempts         = (TextView)findViewById(R.id.tv_attempts);
         Login            = (Button)findViewById(R.id.btn_login);
-        Register         = (Button)findViewById(R.id.btn_signup);
+        Register         = (TextView)findViewById(R.id.tv_signup);
         forgotPassword   = (TextView)findViewById(R.id.tv_ForgotPassword);
 
         Attempts.setText("No of attempts remaining: 3");
@@ -62,6 +63,7 @@ public class Login extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Email.)
                 validate(Email.getText().toString(),Password.getText().toString());
             }
         });

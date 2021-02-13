@@ -21,6 +21,7 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        getSupportActionBar().setTitle("Dashboard");
 
         firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -46,9 +47,11 @@ public class Dashboard extends AppCompatActivity {
             case R.id.logoutMenu:
             {
                 Logout();
+                break;
             }
             case R.id.profileMenu:
                 startActivity(new Intent (Dashboard.this, ProfileActivity.class));
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
