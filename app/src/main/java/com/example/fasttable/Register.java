@@ -33,6 +33,7 @@ import java.io.IOException;
 
 public class Register extends AppCompatActivity {
 
+    //Variables
     private EditText userName, userPassword, userEmail, userAge;
     private Button regButton;
     private TextView userLogin;
