@@ -16,6 +16,7 @@ public class Dashboard extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private Button logout;
+    private Button userBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,15 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setTitle("Dashboard");
 
         firebaseAuth = FirebaseAuth.getInstance();
+        userBooking = (Button)findViewById(R.id.btn_restaurantList);
+
+        userBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this,restaurant_list.class));
+            }
+        });
+
     }
 
     private void Logout()
@@ -50,9 +60,17 @@ public class Dashboard extends AppCompatActivity {
                 break;
             }
             case R.id.profileMenu:
-                startActivity(new Intent (Dashboard.this, ProfileActivity.class));
+            {
+                startActivity(new Intent(Dashboard.this, ProfileActivity.class));
                 break;
+            }
+            case R.id.AboutUsMenu:
+            {
+                startActivity(new Intent(Dashboard.this,AboutUs.class));
+            }
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

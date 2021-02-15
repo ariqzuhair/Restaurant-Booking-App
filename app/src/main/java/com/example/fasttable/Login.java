@@ -1,11 +1,9 @@
 package com.example.fasttable;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +34,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("Login");
 
-        Email            = (EditText)findViewById(R.id.et_userEmail);
+        Email            = (EditText)findViewById(R.id.reg_userEmail);
         Password         = (EditText)findViewById(R.id.et_userPassword);
         Attempts         = (TextView)findViewById(R.id.tv_attempts);
         Login            = (Button)findViewById(R.id.btn_login);

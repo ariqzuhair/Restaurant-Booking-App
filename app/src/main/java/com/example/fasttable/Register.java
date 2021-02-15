@@ -43,6 +43,7 @@ public class Register extends AppCompatActivity {
     private static int PICK_IMAGE = 123;
     Uri imagePath;
     private StorageReference storageReference;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
@@ -70,6 +71,8 @@ public class Register extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
 
         storageReference = firebaseStorage.getReference();
+
+        userProfilePic.setImageResource(R.drawable.fast_table_logo);
         userProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,8 +125,8 @@ public class Register extends AppCompatActivity {
         userPassword = (EditText)findViewById(R.id.reg_userPassword);
         regButton = (Button)findViewById(R.id.btn_regSignUp);
         userLogin = (TextView)findViewById(R.id.tv_userLogin);
-        userAge = (EditText)findViewById(R.id.et_age);
-        userProfilePic = (ImageView)findViewById(R.id.iv_profile);
+        userAge = (EditText)findViewById(R.id.reg_age);
+        userProfilePic = (ImageView)findViewById(R.id.reg_userProfilePic);
     }
 
     private Boolean validate()

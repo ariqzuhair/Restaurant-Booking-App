@@ -105,9 +105,9 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText("Name: " + userProfile.getUserName());
-                profileAge.setText("Age: " + userProfile.getUserAge());
-                profileEmail.setText("Email: " + userProfile.getUserEmail());
+                profileName.setText(userProfile.getUserName());
+                profileAge.setText(userProfile.getUserAge());
+                profileEmail.setText(userProfile.getUserEmail());
             }
 
             @Override

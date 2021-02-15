@@ -17,10 +17,10 @@
     </item>
 
     <item
-        android:id="@+id/refreshMenu"
+        android:id="@+id/AboutUsMenu"
         android:orderInCategory="300"
         app:showAsAction="never"
-        android:title="Refresh">
+        android:title="About Us">
     </item>
 
 </menu>

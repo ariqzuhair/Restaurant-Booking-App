@@ -15,10 +15,10 @@
         android:rotationY="-180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/view3"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/et_userEmail"
+        android:id="@+id/reg_userEmail"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_text_background"

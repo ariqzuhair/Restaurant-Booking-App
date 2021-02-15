@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".UpdateProfile">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivProfileUpdate"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -24,33 +24,40 @@
         android:layout_height="50dp"
         android:ems="10"
         android:hint="Username"
+        android:paddingLeft="26dp"
         android:inputType="textPersonName"
+        android:background="@drawable/edit_text_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfileUpdate"
-        app:layout_constraintVertical_bias="0.417" />
+        app:layout_constraintVertical_bias="0.429" />
 
     <EditText
         android:id="@+id/etAgeUpdate"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="Age"
         android:inputType="number"
+        android:paddingLeft="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.685" />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/montserrat_bold"
         android:text="SAVE"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
@@ -63,6 +70,9 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:textSize="18sp"
+        android:paddingLeft="26dp"
+        android:paddingTop="10dp"
+        android:background="@drawable/edit_text_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
