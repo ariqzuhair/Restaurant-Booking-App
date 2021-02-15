@@ -63,7 +63,6 @@ public class Login extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Email.)
                 validate(Email.getText().toString(),Password.getText().toString());
             }
         });
