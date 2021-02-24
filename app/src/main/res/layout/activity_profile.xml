@@ -1,207 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-    <View
-        android:id="@+id/v_redBG"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:background="#CB202D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/user"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082"
-        tools:srcCompat="@tools:sample/avatars" />
+        <View
+            android:id="@+id/v_redBG"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="#CB202D"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btn_changePassword"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="CHANGE PASSWORD"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_redBG"
-        app:layout_constraintVertical_bias="0.868" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profilePic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/user"
+            android:layout_centerInParent="true">
 
-    <Button
-        android:id="@+id/btn_profileUpdate"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Edit"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_redBG"
-        app:layout_constraintVertical_bias="0.868" />
+        </de.hdodenhof.circleimageview.CircleImageView>
 
-    <ImageView
-        android:id="@+id/iv_calender"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_userLogo"
-        app:layout_constraintVertical_bias="0.064"
-        app:srcCompat="@drawable/calendar"
-        app:tint="#CB202D" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tv_profileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:freezesText="false"
-        android:text="username"
-        android:textAlignment="center"
-        android:textColor="#686868"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toEndOf="@+id/iv_userLogo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+    <RelativeLayout
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+        
+        <TextView
+            android:id="@+id/tv_profileView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile View"
+            android:textSize="24dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/montserrat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+        </TextView>
+        
+        <LinearLayout
+            android:layout_below="@+id/tv_profileView"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tv_profileName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/user"
+                    android:layout_marginLeft="30dp">
 
-    <ImageView
-        android:id="@+id/iv_userLogo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        app:tint="#CB202D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469"
-        app:srcCompat="@drawable/user"
-        android:contentDescription="TODO" />
+                </ImageView>
 
-    <TextView
-        android:id="@+id/tv_profileAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="age"
-        android:textColor="#777777"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toEndOf="@+id/iv_calender"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tv_profileAge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profileName"
-        app:layout_constraintVertical_bias="1.0" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Name"
+                        android:textColor="#000000"
+                        android:textSize="14dp">
+                    </TextView>
 
-    <TextView
-        android:id="@+id/tv_accountInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Account Info"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362" />
+                    <TextView
+                        android:id="@+id/tv_profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp">
+                    </TextView>
 
-    <ImageView
-        android:id="@+id/iv_email"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_calender"
-        app:layout_constraintVertical_bias="0.086"
-        app:srcCompat="@drawable/email"
-        app:tint="#CB202D" />
+                </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_profileEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email Address"
-        android:textAlignment="viewEnd"
-        android:textColor="#7E7E7E"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toEndOf="@+id/iv_email"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profilePic"
-        app:layout_constraintVertical_bias="0.6" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_emailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email Address"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tv_profileEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profileAge"
-        app:layout_constraintVertical_bias="1.0" />
+            <LinearLayout
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/calender"
+                    android:layout_marginLeft="30dp">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Age"
+                        android:textColor="#000000"
+                        android:textSize="14dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/tv_profileAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp"></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/email"
+                    android:layout_marginLeft="30dp">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Email"
+                        android:textColor="#000000"
+                        android:textSize="14dp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_profileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_profileUpdate"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Update Profile"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:background="@drawable/button">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_changePassword"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Reset Password"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:background="@drawable/button"
+                    android:layout_marginLeft="30dp">
+
+                </Button>
+            </LinearLayout
+>
+
+        </LinearLayout>
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

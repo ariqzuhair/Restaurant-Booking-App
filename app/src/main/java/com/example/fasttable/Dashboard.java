@@ -2,6 +2,7 @@ package com.example.fasttable;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,14 +10,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button logout;
-    private Button userBooking;
+    private CardView Restaurant;
+    private CardView Logout;
+    private CardView AboutUs;
+    private CardView Profile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,52 +30,42 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setTitle("Dashboard");
 
         firebaseAuth = FirebaseAuth.getInstance();
-        userBooking = (Button)findViewById(R.id.btn_restaurantList);
 
-        userBooking.setOnClickListener(new View.OnClickListener() {
+        Logout = (CardView)findViewById(R.id.cv_logout);
+        Restaurant = (CardView)findViewById(R.id.cv_restaurants) ;
+        AboutUs = (CardView)findViewById(R.id.cv_aboutUs);
+        Profile = (CardView)findViewById(R.id.cv_profile);
+
+
+        Restaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this,restaurant_list.class));
             }
         });
 
-    }
-
-    private void Logout()
-    {
-        firebaseAuth.signOut();
-        finish();
-        startActivity(new Intent(Dashboard.this,Login.class));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch(item.getItemId())
-        {
-            case R.id.logoutMenu:
-            {
-                Logout();
-                break;
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(Dashboard.this,Login.class));
             }
-            case R.id.profileMenu:
-            {
+        });
+
+        AboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, AboutUs.class));
+            }
+        });
+
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, ProfileActivity.class));
-                break;
             }
-            case R.id.AboutUsMenu:
-            {
-                startActivity(new Intent(Dashboard.this,AboutUs.class));
-            }
-        }
-        return super.onOptionsItemSelected(item);
+        });
+
     }
-
-
 }
