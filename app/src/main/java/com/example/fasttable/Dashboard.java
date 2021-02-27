@@ -21,7 +21,7 @@ public class Dashboard extends AppCompatActivity {
     private CardView Logout;
     private CardView AboutUs;
     private CardView Profile;
-
+    private CardView Feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class Dashboard extends AppCompatActivity {
         Restaurant = (CardView)findViewById(R.id.cv_restaurants) ;
         AboutUs = (CardView)findViewById(R.id.cv_aboutUs);
         Profile = (CardView)findViewById(R.id.cv_profile);
+        Feedback = (CardView)findViewById(R.id.feedback);
 
 
         Restaurant.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, ProfileActivity.class));
+            }
+        });
+
+        Feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, FileFeedback.class));
             }
         });
 
