@@ -80,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         storageReference = firebaseStorage.getReference();
 
-        StorageReference mImageRef = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
+        StorageReference mImageRef = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Profile Image");
         final long ONE_MEGABYTE = 1024 * 1024;
 
         mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {

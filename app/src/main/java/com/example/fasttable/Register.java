@@ -72,7 +72,7 @@ public class Register extends AppCompatActivity {
 
         storageReference = firebaseStorage.getReference();
 
-        userProfilePic.setImageResource(R.drawable.fast_table_logo);
+        userProfilePic.setImageResource(R.drawable.addpic);
         userProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,7 +173,7 @@ public class Register extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Profile Image");
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

@@ -1,9 +1,10 @@
 package com.example.fasttable;
 
 public class UserProfile {
-    public String userAge;
-    public String userEmail;
+
     public String userName;
+    public String userEmail;
+    public String userAge;
 
     public UserProfile(){
     }
