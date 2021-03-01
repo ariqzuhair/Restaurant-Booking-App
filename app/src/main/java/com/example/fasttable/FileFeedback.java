@@ -25,8 +25,8 @@ public class FileFeedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_feedback);
-        username = (EditText) findViewById(R.id.username);
-        feedback = (EditText) findViewById(R.id.feedback);
+        username     = (EditText) findViewById(R.id.username);
+        feedback     = (EditText) findViewById(R.id.feedback);
         SendFeedback = (Button)findViewById(R.id.btn_feedback);
         getSupportActionBar().hide();
 
@@ -36,8 +36,8 @@ public class FileFeedback extends AppCompatActivity {
                 feedbackSent();
             }
         });
-
     }
+
     public void feedbackSent() {
         String usernameInput = username.getText().toString();
         String feedbackInput = feedback.getText().toString();
