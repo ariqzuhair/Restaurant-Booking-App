@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastTable">
         <activity android:name=".FileFeedback"></activity>
-        <activity android:name=".restaurant_list" />
+        <activity android:name=".BookNow" />
         <activity android:name=".AboutUs" />
         <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />

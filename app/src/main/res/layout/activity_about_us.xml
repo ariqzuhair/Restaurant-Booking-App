@@ -60,7 +60,7 @@
                 android:layout_below="@+id/tv_vision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To provide our best service in the Food and Beverages Industry by providing a booking applicationto book your favourite restaurant to eat."
+                android:text="To provide our best service in the Food and Beverages Industry by providing a booking application to book your table to eat."
                 android:textSize="14sp"
                 android:textAlignment="center"
                 android:textColor="#000000"

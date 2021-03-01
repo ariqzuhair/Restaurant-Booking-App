@@ -64,7 +64,7 @@
             android:layout_marginLeft="30dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cv_restaurants"
+                android:id="@+id/cv_bookNow"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
@@ -87,7 +87,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Restaurants"
+                        android:text="Book Now"
                         android:fontFamily="@font/montserrat"
                         android:textSize="15sp"
                         android:layout_gravity="center_horizontal"
