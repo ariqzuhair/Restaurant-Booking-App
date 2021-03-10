@@ -38,7 +38,7 @@ public class PasswordActivity extends AppCompatActivity {
                     String useremail = passwordEmail.getText().toString().trim();
 
                     if(useremail.equals("")){
-                        Toast.makeText(PasswordActivity.this, "Please enter your registered email ID", Toast.LENGTH_SHORT);
+                        Toast.makeText(PasswordActivity.this, "Please enter your registered email ID", Toast.LENGTH_SHORT).show();
                     }else{
                         firebaseAuth.sendPasswordResetEmail(useremail).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -48,7 +48,7 @@ public class PasswordActivity extends AppCompatActivity {
                                     finish();
                                     startActivity(new Intent(PasswordActivity.this, Login.class));
                                 }else{
-                                    Toast.makeText(PasswordActivity.this,"Error occured",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(PasswordActivity.this,"Error occurred",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

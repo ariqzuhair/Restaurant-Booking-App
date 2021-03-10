@@ -38,11 +38,12 @@ public class Register extends AppCompatActivity {
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
     private ImageView userProfilePic;
-    String email, name, age, password;
     private FirebaseStorage firebaseStorage;
     private static int PICK_IMAGE = 123;
-    Uri imagePath;
     private StorageReference storageReference;
+
+    String email, name, age, password;
+    Uri imagePath;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -54,8 +55,6 @@ public class Register extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -69,7 +68,6 @@ public class Register extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-
         storageReference = firebaseStorage.getReference();
 
         userProfilePic.setImageResource(R.drawable.addpic);
@@ -82,7 +80,6 @@ public class Register extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent,"select image"),PICK_IMAGE);
             }
         });
-
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,9 +98,9 @@ public class Register extends AppCompatActivity {
                             {
                                 sendEmailVerification();
                             }else
-                                {
-                                    Toast.makeText(Register.this,"Registration Failed", Toast.LENGTH_SHORT).show();
-                                }
+                            {
+                                Toast.makeText(Register.this,"Registration Failed", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }
@@ -120,36 +117,35 @@ public class Register extends AppCompatActivity {
 
     private void setupUIViews()
     {
-        userEmail = (EditText)findViewById(R.id.reg_userEmail);
-        userName = (EditText)findViewById(R.id.reg_userName);
-        userPassword = (EditText)findViewById(R.id.reg_userPassword);
-        regButton = (Button)findViewById(R.id.btn_regSignUp);
-        userLogin = (TextView)findViewById(R.id.tv_userLogin);
-        userAge = (EditText)findViewById(R.id.reg_age);
+        userEmail      = (EditText)findViewById(R.id.reg_userEmail);
+        userName       = (EditText)findViewById(R.id.reg_userName);
+        userPassword   = (EditText)findViewById(R.id.reg_userPassword);
+        regButton      = (Button)findViewById(R.id.btn_regSignUp);
+        userLogin      = (TextView)findViewById(R.id.tv_userLogin);
+        userAge        = (EditText)findViewById(R.id.reg_age);
         userProfilePic = (ImageView)findViewById(R.id.reg_userProfilePic);
     }
 
     private Boolean validate()
     {
         Boolean result = false;
-        name = userName.getText().toString();
-        password = userPassword.getText().toString();
-        email = userEmail.getText().toString();
-        age = userAge.getText().toString();
+
+        password       = userPassword.getText().toString();
+        email          = userEmail.getText().toString();
+        age            = userAge.getText().toString();
 
         if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty() || imagePath == null)
         {
             Toast.makeText(this,"Please enter all the details", Toast.LENGTH_SHORT).show();
         }else
-            {
-                result = true;
-            }
+        {
+            result = true;
+        }
 
         return result;
     }
 
-    private void sendEmailVerification()
-    {
+    private void sendEmailVerification() {
         FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         if(firebaseUser != null)
         {
@@ -163,13 +159,14 @@ public class Register extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(Register.this,Login.class));
                     }else
-                        {
-                            Toast.makeText(Register.this, "Verification mail has not been sent!", Toast.LENGTH_SHORT).show();
-                        }
+                    {
+                        Toast.makeText(Register.this, "Verification mail has not been sent!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         }
     }
+
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());

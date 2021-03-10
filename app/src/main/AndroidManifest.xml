@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastTable">
-        <activity android:name=".Contact_us"></activity>
+        <activity android:name=".Receipt"></activity>
+        <activity android:name=".Invoice" />
         <activity android:name=".FileFeedback" />
         <activity android:name=".BookNow" />
         <activity android:name=".AboutUs" />

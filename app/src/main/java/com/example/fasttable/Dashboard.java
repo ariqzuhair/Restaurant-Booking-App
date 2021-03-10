@@ -17,6 +17,7 @@ public class Dashboard extends AppCompatActivity {
     private CardView AboutUs;
     private CardView Profile;
     private CardView Feedback;
+    private CardView Receipt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,13 @@ public class Dashboard extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        Logout = (CardView)findViewById(R.id.cv_logout);
-        Restaurant = (CardView)findViewById(R.id.cv_bookNow) ;
-        AboutUs = (CardView)findViewById(R.id.cv_aboutUs);
-        Profile = (CardView)findViewById(R.id.cv_profile);
-        Feedback = (CardView)findViewById(R.id.feedback);
+        Logout     = (CardView)findViewById(R.id.cv_logout);
+        Restaurant = (CardView)findViewById(R.id.cv_bookNow);
+        AboutUs    = (CardView)findViewById(R.id.cv_aboutUs);
+        Profile    = (CardView)findViewById(R.id.cv_profile);
+        Feedback   = (CardView)findViewById(R.id.feedback);
+        Receipt    = (CardView)findViewById(R.id.receipt);
+
 
 
         Restaurant.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +70,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, FileFeedback.class));
+            }
+        });
+
+        Receipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Receipt.class));
             }
         });
 
