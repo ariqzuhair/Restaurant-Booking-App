@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <View
+            android:id="@+id/v_redBG"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="#CB202D"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profilePic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/user"
+            android:layout_centerInParent="true">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+        
+        <TextView
+            android:id="@+id/tv_profileView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile View"
+            android:textSize="24dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/montserrat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+        </TextView>
+        
+        <LinearLayout
+            android:layout_below="@+id/tv_profileView"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/user"
+                    android:layout_marginLeft="30dp">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Name"
+                        android:textColor="#000000"
+                        android:textSize="14dp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/calender"
+                    android:layout_marginLeft="30dp">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Age"
+                        android:textColor="#000000"
+                        android:textSize="14dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/tv_profileAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp"></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/email"
+                    android:layout_marginLeft="30dp">
+
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Email"
+                        android:textColor="#000000"
+                        android:textSize="14dp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_profileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="18dp">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_profileUpdate"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Update Profile"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:background="@drawable/button">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_changePassword"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Reset Password"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:background="@drawable/button"
+                    android:layout_marginLeft="30dp">
+
+                </Button>
+            </LinearLayout
+>
+
+        </LinearLayout>
+        
+    </RelativeLayout>
+    
+</RelativeLayout>
