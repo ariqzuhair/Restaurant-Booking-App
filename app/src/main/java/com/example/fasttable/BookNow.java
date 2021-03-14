@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,10 +30,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+=======
+import android.widget.EditText;
+>>>>>>> 2bbed8c7e76e1db976b6ea33ad20652c57be458a
 
 public class BookNow extends AppCompatActivity {
 
     private EditText Name;
+<<<<<<< HEAD
     private TextView Pax;
     private Button DatePicker;
     private TextView TimePicker;
@@ -45,6 +50,12 @@ public class BookNow extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
+=======
+    private EditText NumberofPax;
+    private EditText Date;
+    private EditText Time;
+    private Button ReservationForm;
+>>>>>>> 2bbed8c7e76e1db976b6ea33ad20652c57be458a
 
 
     @Override
@@ -53,6 +64,7 @@ public class BookNow extends AppCompatActivity {
         setContentView(R.layout.activity_book_now);
         getSupportActionBar().setTitle("Book Your Table Now");
 
+<<<<<<< HEAD
         Name       = (EditText)     findViewById(R.id.tv_name);
         DatePicker = (Button)       findViewById(R.id.btn_datePicker);
         Pax        = (TextView)     findViewById(R.id.tv_pax);
@@ -232,6 +244,23 @@ public class BookNow extends AppCompatActivity {
         userMap.put("Time" , time);
         userMap.put("Pax" , pax);
         userMap.put("Total Price" , strPax);
+=======
+        Name                = (EditText)findViewById(R.id.pt_name);
+        NumberofPax         = (EditText)findViewById(R.id.tv_numpax);
+        ReservationForm     = (Button)findViewById(R.id.btn_reserve);
+        Date                = (EditText) findViewById(R.id.tv_date);
+        Time                = (EditText) findViewById(R.id.tv_time);
+
+
+        ReservationForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+
+
+>>>>>>> 2bbed8c7e76e1db976b6ea33ad20652c57be458a
 
         myRef.setValue(userMap);
     }
