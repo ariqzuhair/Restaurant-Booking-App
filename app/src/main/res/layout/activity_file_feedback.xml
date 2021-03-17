@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FileFeedback">
+
+
+    <ImageView
+        android:id="@+id/iv_feed"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+        app:srcCompat="@drawable/feedbacks" />
+
+    <TextView
+        android:id="@+id/tv_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="102dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="We Need Your Support!"
+        android:textColor="#000000"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Give us your feedback!"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btn_feedback"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:text="Send FeedBack"
+        android:textColor="#FFFFFF" />
+
+
+</LinearLayout>
