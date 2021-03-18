@@ -37,16 +37,17 @@
         android:layout_width="222dp"
         android:layout_height="141dp"
         android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
         android:text="Book Now, Save Time!"
         android:textAlignment="gravity"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.262" />
 
     <EditText
         android:id="@+id/reg_userEmail"
@@ -165,15 +166,15 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="132dp"
-        android:layout_height="130dp"
+        android:layout_width="138dp"
+        android:layout_height="132dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toEndOf="@+id/tv_title"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033"
+        app:layout_constraintVertical_bias="0.457"
         app:srcCompat="@drawable/fasttablelogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

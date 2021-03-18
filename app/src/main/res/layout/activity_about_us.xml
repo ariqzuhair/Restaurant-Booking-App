@@ -60,7 +60,7 @@
                 android:layout_below="@+id/tv_vision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To provide our best service in the Food and Beverages Industry by providing a booking application to book your table to eat."
+                android:text="To provide our best service in the Food and Beverages Industry by providing a booking application to book a table for you to eat."
                 android:textSize="14sp"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -87,8 +87,7 @@
                 android:layout_below="@+id/tv_mission"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To help restrain the spread the pandemic virus and help to increase the societiy's social distancing.
-"
+                android:text="To help restrain the spread of pandemic virus and help to increase the society's social distancing."
                 android:textSize="14sp"
                 android:textAlignment="center"
                 android:textColor="#000000"
