@@ -36,7 +36,7 @@ import java.io.IOException;
 public class UpdateProfile extends AppCompatActivity {
 
     private EditText newUserName, newUserAge;
-    private TextView newUserEmail;
+    private TextView userEmail;
     private Button save;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -64,9 +64,11 @@ public class UpdateProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
+        getSupportActionBar().setTitle("Update Profile");
+
 
         newUserName = findViewById(R.id.etNameUpdate);
-        newUserEmail = findViewById(R.id.tv_email);
+        userEmail = findViewById(R.id.tv_email);
         newUserAge = findViewById(R.id.etAgeUpdate);
         save = findViewById(R.id.btnSave);
         updateProfilePic = findViewById(R.id.ivProfileUpdate);
@@ -82,7 +84,6 @@ public class UpdateProfile extends AppCompatActivity {
         storageReference = firebaseStorage.getReference();
 
         StorageReference mImageRef = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
-        //StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
         final long ONE_MEGABYTE = 1024 * 1024;
 
         mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
@@ -120,7 +121,7 @@ public class UpdateProfile extends AppCompatActivity {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 newUserName.setText(userProfile.getUserName());
                 newUserAge.setText(userProfile.getUserAge());
-                newUserEmail.setText(userProfile.getUserEmail());
+                userEmail.setText(userProfile.getUserEmail());
             }
 
             @Override
@@ -132,32 +133,35 @@ public class UpdateProfile extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = newUserName.getText().toString();
-                String age = newUserAge.getText().toString();
-                String email = newUserEmail.getText().toString();
 
-                UserProfile userProfile = new UserProfile(age, email, name);
+                if(validate()){
 
-                databaseReference.setValue(userProfile);
+                    String name = newUserName.getText().toString();
+                    String age   = newUserAge.getText().toString();
+                    String email =  userEmail.getText().toString();
 
-                StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
-                UploadTask uploadTask = imageReference.putFile(imagePath);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UpdateProfile.this,"Upload Failed", Toast.LENGTH_SHORT).show();
-                    }
+                    UserProfile userProfile = new UserProfile(age, email, name);
 
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(UpdateProfile.this,"Upload Succesful", Toast.LENGTH_SHORT).show();
+                    databaseReference.setValue(userProfile);
 
-                    }
-                });
+                    StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
+                    UploadTask uploadTask = imageReference.putFile(imagePath);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(UpdateProfile.this,"Upload Failed", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(UpdateProfile.this,"Upload Succesful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(UpdateProfile.this, ProfileActivity.class));
+                        }
+                    });
+                }
             }
         });
-
     }
 
     @Override
@@ -168,5 +172,20 @@ public class UpdateProfile extends AppCompatActivity {
                 onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean validate(){
+        String name = newUserName.getText().toString();
+        String age = newUserAge.getText().toString();
+
+        if(name.isEmpty()){
+            newUserName.setError("Field must not be empty");
+            return false;
+        }else if(age.isEmpty()){
+            newUserAge.setError("Field must not be empty");
+            return false;
+        }else{
+            return true;
+        }
     }
 }

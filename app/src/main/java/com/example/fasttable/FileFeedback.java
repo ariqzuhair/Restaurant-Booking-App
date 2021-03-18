@@ -35,7 +35,7 @@ public class FileFeedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_feedback);
-        getSupportActionBar().setTitle("Fast Table");
+        getSupportActionBar().setTitle("Give your feedback");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setupUIView();
@@ -44,7 +44,9 @@ public class FileFeedback extends AppCompatActivity {
         SendFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                feedbackSent();
+                if(validate()){
+                    feedbackSent();
+                }
             }
         });
 
@@ -103,5 +105,20 @@ public class FileFeedback extends AppCompatActivity {
         Toast.makeText(FileFeedback.this,"Feedback has been sent", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(FileFeedback.this,Dashboard.class
         ));
+    }
+
+    private boolean validate(){
+         String name     = Name.getText().toString();
+         String feedback = Feedback.getText().toString();
+
+         if(name.isEmpty()){
+             Name.setError("Please enter your name");
+             return false;
+         }else if(feedback.isEmpty()){
+             Feedback.setError("This field cannot be empty");
+             return false;
+        }else{
+             return true;
+         }
     }
 }

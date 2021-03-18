@@ -18,12 +18,13 @@ public class Dashboard extends AppCompatActivity {
     private CardView Profile;
     private CardView Feedback;
     private CardView Receipt;
+    private CardView ContactUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        getSupportActionBar().setTitle("Fast Table");
+        getSupportActionBar().setTitle("Dashboard");
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -33,8 +34,7 @@ public class Dashboard extends AppCompatActivity {
         Profile    = (CardView)findViewById(R.id.cv_profile);
         Feedback   = (CardView)findViewById(R.id.feedback);
         Receipt    = (CardView)findViewById(R.id.receipt);
-
-
+        ContactUs  = (CardView)findViewById(R.id.cv_contactUs);
 
         Restaurant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +77,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, Receipt.class));
+            }
+        });
+
+        ContactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, ContactUs.class));
             }
         });
 

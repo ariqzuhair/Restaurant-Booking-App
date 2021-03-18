@@ -54,7 +54,7 @@ public class BookNow extends AppCompatActivity {
         setContentView(R.layout.activity_book_now);
         getSupportActionBar().setTitle("Book Your Table Now");
 
-        Name       = (EditText)     findViewById(R.id.tv_name);
+        Name       = (EditText)     findViewById(R.id.et_name);
         DatePicker = (Button)       findViewById(R.id.btn_datePicker);
         Pax        = (TextView)     findViewById(R.id.tv_pax);
         TimePicker = (TextView)     findViewById(R.id.tv_timePicker);
@@ -121,10 +121,20 @@ public class BookNow extends AppCompatActivity {
 
         Book.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                userBookingDetail();
-                startActivity(new Intent(BookNow.this, Invoice.class));
+                String name = Name.getText().toString();
+                String time = TimePicker.getText().toString();
+
+                if(name.isEmpty()){
+                    Name.setError("This field cannot be empty");
+                }else if(time.isEmpty()){
+                    TimePicker.setError("This field cannot be empty");
+                }else{
+                    userBookingDetail();
+                    startActivity(new Intent(BookNow.this, Invoice.class));
+                }
             }
         });
+
 }
 
     private String getTodaysDate() {
@@ -206,7 +216,7 @@ public class BookNow extends AppCompatActivity {
 
     public void decrement(View v)
     {
-        if(count <= 0 ) count = 0;
+        if(count <= 1 ) count = 1;
         else count--;
 
         Pax.setText("" + count);
@@ -233,7 +243,8 @@ public class BookNow extends AppCompatActivity {
 
         int numPax = Integer.parseInt(pax);
         double totalPrice = numPax*9.00;
-        String strPax = String.valueOf(totalPrice);
+
+        String strPax = String.format("%.2f",totalPrice);
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("User Booking").child(firebaseAuth.getUid());

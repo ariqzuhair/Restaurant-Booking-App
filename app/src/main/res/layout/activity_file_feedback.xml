@@ -32,7 +32,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:hint="Username" />
+        android:hint="Username"
+        android:fontFamily="@font/montserrat"/>
 
     <EditText
         android:id="@+id/feedback"
@@ -41,6 +42,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="Give us your feedback!"
+        android:fontFamily="@font/montserrat"
         android:inputType="textMultiLine" />
 
     <Button
@@ -50,6 +52,7 @@
         android:layout_gravity="center"
         android:background="@drawable/button"
         android:text="Send FeedBack"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="#FFFFFF" />
 
 

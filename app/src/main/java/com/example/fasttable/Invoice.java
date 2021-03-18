@@ -1,4 +1,4 @@
-package com.example.fasttable;
+ package com.example.fasttable;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +28,7 @@ public class Invoice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
-        getSupportActionBar().setTitle("Choose Your Meals Here");
+        getSupportActionBar().setTitle("Your Invoice");
 
         receiptSetup();
         setDetail();

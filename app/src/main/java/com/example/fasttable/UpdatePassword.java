@@ -27,9 +27,10 @@ public class UpdatePassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_password);
+        getSupportActionBar().setTitle("Update Password");
 
-            update = findViewById(R.id.btnUpdatePassword);
-            newPassword = findViewById(R.id.etNewPassword);
+        update = findViewById(R.id.btnUpdatePassword);
+        newPassword = findViewById(R.id.etNewPassword);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -39,12 +40,11 @@ public class UpdatePassword extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String userPasswordNew = newPassword.getText().toString();
                 firebaseUser.updatePassword(userPasswordNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
+                        if (userPasswordNew.length() > 6) {
                             Toast.makeText(UpdatePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
@@ -54,18 +54,6 @@ public class UpdatePassword extends AppCompatActivity {
                 });
             }
         });
-
-    }
-    private Boolean val() {
-        Boolean result = false;
-
-        if (newPassword.length() < 6) {
-            Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            result = true;
-        }
-        return result;
     }
 
     @Override

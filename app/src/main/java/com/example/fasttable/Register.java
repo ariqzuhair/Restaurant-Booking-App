@@ -135,16 +135,19 @@ public class Register extends AppCompatActivity {
         email          = userEmail.getText().toString();
         age            = userAge.getText().toString();
 
-        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty() || imagePath == null)
-            {
-                Toast.makeText(this,"Please enter all the details", Toast.LENGTH_SHORT).show();
-            }
-        else if(password.length() < 6)
-            {
-                Toast.makeText(this,"Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
-            }
-        else
-        {
+        if(name.isEmpty()){
+            userName.setError("Field must not be empty");
+        }else if(password.isEmpty()){
+            userPassword.setError("Field must not be empty");
+        }else if(password.length()<6){
+            userPassword.setError("Password must not be less than 6");
+        }else if(email.isEmpty()){
+            userEmail.setError("Field must not be empty");
+        }else if(age.isEmpty()){
+            userAge.setError("Field must not be empty");
+        } else if(imagePath == null){
+            Toast.makeText(this,"Please upload your image",Toast.LENGTH_SHORT).show();
+        }else {
             result = true;
         }
         return result;
@@ -175,7 +178,7 @@ public class Register extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Profile Image");
+        StorageReference imageReference = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Images").child("Profile Picture");
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

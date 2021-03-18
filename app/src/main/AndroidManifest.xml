@@ -8,12 +8,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/fasttablelogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/fasttablelogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastTable">
-        <activity android:name=".Receipt"></activity>
+        <activity android:name=".ContactUs" ></activity>
+        <activity android:name=".Receipt" />
         <activity android:name=".Invoice" />
         <activity android:name=".FileFeedback" />
         <activity android:name=".BookNow" />
@@ -24,7 +25,8 @@
         <activity android:name=".PasswordActivity" />
         <activity android:name=".Register" />
         <activity android:name=".Dashboard" />
-        <activity android:name=".Login">
+        <activity android:name=".Login"/>
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
